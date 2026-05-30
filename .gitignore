@@ -15,3 +15,5 @@ build/
 annotations/
 annotations-*/
 output/
+
+*.bat
