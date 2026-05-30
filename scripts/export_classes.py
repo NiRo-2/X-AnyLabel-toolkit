@@ -14,7 +14,6 @@ if str(_SCRIPTS_DIR) not in sys.path:
 from _common import (
     collect_labels_from_data,
     find_json_files,
-    is_inside,
     print_summary,
     print_validation_errors,
     validate_json_files,
@@ -50,11 +49,6 @@ def validate_paths(in_dir: Path, out_classes: Path) -> list[str]:
         errors.append(f"--in-dir does not exist: {in_dir}")
     elif not in_dir.is_dir():
         errors.append(f"--in-dir is not a directory: {in_dir}")
-
-    if in_dir.exists() and is_inside(out_classes, in_dir):
-        errors.append(
-            f"--out-classes must be outside --in-dir (input is read-only): {out_classes}"
-        )
 
     if not errors:
         try:

@@ -19,7 +19,7 @@ No external pip packages are required today; the file is included for a consiste
 Both scripts:
 
 - Recursively scan all `*.json` files under `--in-dir`
-- **Never modify `--in-dir`** (read-only input; all output goes elsewhere)
+- **Never modify JSON files under `--in-dir`** (read-only input)
 - **Validate everything before writing** — if validation fails, no output is created or changed
 - Print a `--- Summary ---` block at the end of every run
 
@@ -68,12 +68,13 @@ Build a YOLO-compatible `classes.txt` from all unique labels found in JSON files
 | Flag | Description |
 |------|-------------|
 | `--in-dir` | Input directory with JSON annotation files |
-| `--out-classes` | Output path for `classes.txt` (must be outside `--in-dir`) |
+| `--out-classes` | Output path for `classes.txt` (may be inside or outside `--in-dir`) |
 
 **Behavior:**
 
 - One class name per line (line index = class ID, 0-based)
 - Classes sorted alphabetically for stable output
+- Only writes `classes.txt`; JSON annotation files are never modified
 - Atomic write: existing `classes.txt` is replaced only after validation passes
 
 ```bash
