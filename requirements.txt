@@ -1,0 +1,2 @@
+# X-AnyLabel-toolkit — standard library only (no pip packages).
+# Requires Python 3.9+
