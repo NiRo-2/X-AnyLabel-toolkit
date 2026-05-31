@@ -15,5 +15,6 @@ build/
 annotations/
 annotations-*/
 output/
+*_xanylabeling/
 
 *.bat

@@ -1,2 +1,4 @@
-# X-AnyLabel-toolkit — standard library only (no pip packages).
-# Requires Python 3.9+
+# Annotation scripts (rename_label.py, export_classes.py): stdlib only.
+# YOLO export (yolov8_pt_to_xanylabeling_onnx.py):
+ultralytics>=8.0.0
+PyYAML>=6.0
